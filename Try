@@ -1,0 +1,39 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class Program
+{
+static public void Main()
+{
+}
+}
+class Try
+{
+    static public uint Try_Parse(byte option)
+        {
+
+            uint x;
+            bool a = UInt32.TryParse(Console.ReadLine(), out x);
+            if (!a)
+            {
+                Console.Write("Введено нечисловое значение. Повторите ввод: ");
+                return Try_Parse(option);
+            }
+            if (option == 1 & x > 7) //в программу подставляются свои значения, которые не должны превышаться
+            {
+                Console.Write("Введено число больше 7. Повторите ввод: "); 
+                return Try_Parse(1);
+            }
+            else if (option == 0 & x > 12)
+            {
+                Console.Write("Введено число больше 12. Повторите ввод: ");
+                return Try_Parse(0);
+            }
+
+            return x;
+        }
+}
